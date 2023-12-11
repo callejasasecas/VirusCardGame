@@ -1,0 +1,63 @@
+    cerebro1 = Organo("organo", "azul", 0)
+    cerebro2 = Organo("organo", "azul", 0)
+    cerebro3 = Organo("organo", "azul", 0)
+    cerebro4 = Organo("organo", "azul", 0)
+    cerebro5 = Organo("organo", "azul", 0)
+
+    virusCerebro1 = Virus("virus", "azul")
+    virusCerebro2 = Virus("virus", "azul")
+    virusCerebro3 = Virus("virus", "azul")
+    virusCerebro4 = Virus("virus", "azul")
+
+    medicinaCerebro1 = Medicina("medicina", "azul")
+    medicinaCerebro2 = Medicina("medicina", "azul")
+    medicinaCerebro3 = Medicina("medicina", "azul")
+    medicinaCerebro4 = Medicina("medicina", "azul")
+
+    corazon1 = Organo("organo", "rojo", 0)
+    corazon2 = Organo("organo", "rojo", 0)
+    corazon3 = Organo("organo", "rojo", 0)
+    corazon4 = Organo("organo", "rojo", 0)
+    corazon5 = Organo("organo", "rojo", 0)
+
+    virusCorazon1 = Virus("virus", "rojo")
+    virusCorazon2 = Virus("virus", "rojo")
+    virusCorazon3 = Virus("virus", "rojo")
+    virusCorazon4 = Virus("virus", "rojo")
+
+    medicinaCorazon1 = Medicina("medicina", "rojo")
+    medicinaCorazon2 = Medicina("medicina", "rojo")
+    medicinaCorazon3 = Medicina("medicina", "rojo")
+    medicinaCorazon4 = Medicina("medicina", "rojo")
+
+    hueso1 = Organo("organo", "amarillo", 0)
+    hueso2 = Organo("organo", "amarillo", 0)
+    hueso3 = Organo("organo", "amarillo", 0)
+    hueso4 = Organo("organo", "amarillo", 0)
+    hueso5 = Organo("organo", "amarillo", 0)
+
+    virusHueso1 = Virus("virus", "amarillo")
+    virusHueso2 = Virus("virus", "amarillo")
+    virusHueso3 = Virus("virus", "amarillo")
+    virusHueso4 = Virus("virus", "amarillo")
+
+    medicinaHueso1 = Medicina("medicina", "amarillo")
+    medicinaHueso2 = Medicina("medicina", "amarillo")
+    medicinaHueso3 = Medicina("medicina", "amarillo")
+    medicinaHueso4 = Medicina("medicina", "amarillo")
+
+    estomago1 = Organo("organo", "verde", 0)
+    estomago2 = Organo("organo", "verde", 0)
+    estomago3 = Organo("organo", "verde", 0)
+    estomago4 = Organo("organo", "verde", 0)
+    estomago5 = Organo("organo", "verde", 0)
+
+    virusEstomago1 = Virus("virus", "verde")
+    virusEstomago2 = Virus("virus", "verde")
+    virusEstomago3 = Virus("virus", "verde")
+    virusEstomago4 = Virus("virus", "verde")
+
+    medicinaEstomago1 = Medicina("medicina", "verde")
+    medicinaEstomago2 = Medicina("medicina", "verde")
+    medicinaEstomago3 = Medicina("medicina", "verde")
+    medicinaEstomago4 = Medicina("medicina", "verde")
