@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de cartas</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos adicionales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .player-hand, .opponent-hand {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 80px;
+            height: 120px;
+            border: 2px solid #343a40; /* Color del borde */
+            background-color: #f8f9fa; /* Color de fondo */
+            color: #000; /* Color del texto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+        .player-hand .card img, .opponent-hand .card img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        .table {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .discard {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .play-area {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 5px;
+        }
+        .play-zone {
+            width: 80px;
+            height: 120px;
+            border: 1px dashed #000;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Cartas</h1>
+    
+    <!-- Sección de la mano del jugador -->
+    <div class="player-hand">
+        <div class="card" draggable="true">
+            Carta 1
+        </div>
+        <div class="card" draggable="true">
+            Carta 2
+        </div>
+        <div class="card" draggable="true">
+            Carta 3
+        </div>
+        <!-- Puedes replicar esto para más cartas en la mano -->
+    </div>
+
+    <!-- Sección del oponente -->
+    <div class="opponent-hand">
+        <div class="play-zone" droppable="true"></div>
+        <div class="play-zone" droppable="true"></div>
+        <div class="play-zone" droppable="true"></div>
+        <div class="play-zone" droppable="true"></div>
+    </div>
+
+    <!-- Sección de la mesa de juego -->
+    <div class="table">
+        <h2>Mazo de robo</h2>
+        <div class="card discard" id="deck">
+            Mazo
+        </div>
+
+        <h2>Área de juego</h2>
+        <div class="opponent-hand">
+            <div class="play-zone" droppable="true"></div>
+            <div class="play-zone" droppable="true"></div>
+            <div class="play-zone" droppable="true"></div>
+            <div class="play-zone" droppable="true"></div>
+        </div>
+    </div>
+	
+	<div class="player-hand">
+        <div class="card" draggable="true">
+            Carta 1
+        </div>
+        <div class="card" draggable="true">
+            Carta 2
+        </div>
+        <div class="card" draggable="true">
+            Carta 3
+        </div>
+        <!-- Puedes replicar esto para más cartas en la mano -->
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const playZones = document.querySelectorAll('.play-zone');
+        const deck = document.getElementById('deck');
+
+        cards.forEach(card => {
+            card.addEventListener('dragstart', () => {
+                card.classList.add('dragging');
+            });
+            card.addEventListener('dragend', () => {
+                card.classList.remove('dragging');
+            });
+        });
+
+        playZones.forEach(zone => {
+            zone.addEventListener('dragover', e => {
+                e.preventDefault();
+            });
+            zone.addEventListener('drop', e => {
+                const draggedCard = document.querySelector('.dragging');
+                if (draggedCard) {
+                    zone.appendChild(draggedCard);
+                }
+            });
+        });
+
+        deck.addEventListener('click', () => {
+            const newCard = document.createElement('div');
+            newCard.classList.add('card');
+            newCard.draggable = true;
+            newCard.textContent = 'Nueva Carta';
+            document.querySelector('.player-hand').appendChild(newCard);
+
+            newCard.addEventListener('dragstart', () => {
+                newCard.classList.add('dragging');
+            });
+            newCard.addEventListener('dragend', () => {
+                newCard.classList.remove('dragging');
+            });
+        });
+    </script>
+</body>
+</html>
